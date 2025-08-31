@@ -1,11 +1,13 @@
 # Table 3
 
-\renewcommand{\arraystretch}{0.95}
+\renewcommand{\arraystretch}{0.9} % tighter rows
 \begin{table}[htbp]
 \centering
-\caption{Effect sizes: Country }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c c}
+\caption{Effect sizes: Country}
+\small % use smaller font size
+\setlength{\tabcolsep}{5pt} % reduce horizontal padding
+\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l l c c c @{}}
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
@@ -78,8 +80,7 @@
   & Venezuela & --- & (0.07) & (0.03) \\
   &  &  & $N_e$=1, $N_p$=1 & $N_e$=1, $N_p$=1 \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular*}
 \bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
