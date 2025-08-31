@@ -1,11 +1,13 @@
 # Table 3
 
-\renewcommand{\arraystretch}{0.95}
+\renewcommand{\arraystretch}{0.90} % a bit tighter than 0.95
 \begin{table}[htbp]
 \centering
 \caption{Effect sizes: Design Components }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c c}
+\small % ensure same (smaller) font as your preferred tables
+\setlength{\tabcolsep}{5pt} % reduce column padding (default ~6pt)
+\medskip\resizebox{\linewidth}{!}{% use \linewidth and keep width = text width
+\begin{tabular}{@{} l l c c c @{}} % trim outer padding
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
@@ -34,5 +36,5 @@
 \end{tabular}%
 }
 \bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
