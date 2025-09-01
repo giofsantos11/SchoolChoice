@@ -1,0 +1,47 @@
+# Table 17
+
+\renewcommand{\arraystretch}{0.95}
+\begin{table}[htbp]
+\centering
+\caption{Effect sizes: Methodology }
+\medskip\resizebox{1\textwidth}{!}{%
+\begin{tabular}{l l c c}
+\toprule
+\textbf{Group} & \textbf{Category} & \textbf{Earnings} & \textbf{Employment} \\
+\midrule
+\multirow{6}{*}{\textbf{Methodology}}
+  &  & 0.11* & 0.11*** \\
+  & Experimental & (0.06) & (0.03) \\
+  &  & $N_e$=9, $N_p$=6 & $N_e$=33, $N_p$=13 \\
+\cmidrule(lr){2-4}
+  &  & 0.90*** & 0.93** \\
+  & Quasi-experimental & (0.28) & (0.46) \\
+  &  & $N_e$=3, $N_p$=1 & $N_e$=4, $N_p$=2 \\
+\midrule
+\multirow{9}{*}{\textbf{Effect label}}
+  &  &  & 0.22** \\
+  & ATT & --- & (0.09) \\
+  &  &  & $N_e$=1, $N_p$=1 \\
+\cmidrule(lr){2-4}
+  &  &  & 0.08*** \\
+  & ITT & --- & (0.02) \\
+  &  &  & $N_e$=5, $N_p$=2 \\
+\cmidrule(lr){2-4}
+  &  &  & 0.22*** \\
+  & LATE & --- & (0.08) \\
+  &  &  & $N_e$=4, $N_p$=1 \\
+\midrule
+\multirow{6}{*}{\textbf{Publication status}}
+  &  & 0.11*** & 0.20*** \\
+  & Not published & (0.04) & (0.06) \\
+  &  & $N_e$=8, $N_p$=4 & $N_e$=23, $N_p$=8 \\
+\cmidrule(lr){2-4}
+  &  & 0.15 & 0.03 \\
+  & Published - Econ & (0.15) & (0.02) \\
+  &  & $N_e$=4, $N_p$=3 & $N_e$=14, $N_p$=7 \\
+\bottomrule
+\end{tabular}%
+}
+\bigskip
+\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\end{table}
