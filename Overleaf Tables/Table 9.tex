@@ -1,11 +1,14 @@
 # Table 9
 
-\renewcommand{\arraystretch}{0.95}
+\renewcommand{\arraystretch}{0.9} % tighter rows
+\setlength{\tabcolsep}{5pt}       % tighter columns
+\small                            % consistent smaller font
+
 \begin{table}[htbp]
 \centering
-\caption{Effect sizes: Methodology }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c c}
+\caption{Effect sizes: Methodology}
+\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l l c c c @{}}
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
@@ -72,8 +75,8 @@
   & Published - No Econ & (0.09) & (0.02) & (0.03) \\
   &  & $N_e$=7, $N_p$=4 & $N_e$=30, $N_p$=16 & $N_e$=29, $N_p$=17 \\
 \bottomrule
-\end{tabular}%
-}
-\bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\end{tabular*}
+
+\vspace{0.3em} % tighter space before notes
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
