@@ -1,0 +1,33 @@
+# Table 18
+
+\renewcommand{\arraystretch}{0.95}
+\begin{table}[htbp]
+\centering
+\caption{Effect sizes: Sample Type }
+\medskip\resizebox{1\textwidth}{!}{%
+\begin{tabular}{l l c c}
+\toprule
+\textbf{Group} & \textbf{Category} & \textbf{Earnings} & \textbf{Employment} \\
+\midrule
+\multirow{12}{*}{\textbf{Sample population}}
+  &  & 0.15** & 0.11*** \\
+  & All & (0.07) & (0.03) \\
+  &  & $N_e$=10, $N_p$=6 & $N_e$=33, $N_p$=13 \\
+\cmidrule(lr){2-4}
+  &  &  & -0.06** \\
+  & Low education & --- & (0.03) \\
+  &  &  & $N_e$=1, $N_p$=1 \\
+\cmidrule(lr){2-4}
+  &  & 0.08*** & 0.11*** \\
+  & Low income & (0.03) & (0.03) \\
+  &  & $N_e$=1, $N_p$=1 & $N_e$=3, $N_p$=2 \\
+\cmidrule(lr){2-4}
+  &  & 1.04** & 1.81*** \\
+  & Unemployed & (0.48) & (0.54) \\
+  &  & $N_e$=1, $N_p$=1 & $N_e$=1, $N_p$=1 \\
+\bottomrule
+\end{tabular}%
+}
+\bigskip
+\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\end{table}
