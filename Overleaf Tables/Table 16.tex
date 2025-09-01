@@ -1,11 +1,14 @@
 # Table 16
 
-\renewcommand{\arraystretch}{0.95}
+\renewcommand{\arraystretch}{0.9} % tighter rows
+\setlength{\tabcolsep}{5pt}       % tighter columns
+\small                            % smaller font
+
 \begin{table}[htbp]
 \centering
-\caption{Effect sizes: Design Components }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c}
+\caption{Effect sizes: Design Components}
+\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l l c c @{}}
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Earnings} & \textbf{Employment} \\
 \midrule
@@ -18,8 +21,8 @@
   & Vocational & (0.07) & (0.03) \\
   &  & $N_e$=11, $N_p$=6 & $N_e$=35, $N_p$=13 \\
 \bottomrule
-\end{tabular}%
-}
-\bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\end{tabular*}
+
+\vspace{0.3em} % tighter space before notes
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
