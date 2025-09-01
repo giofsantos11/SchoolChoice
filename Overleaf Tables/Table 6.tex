@@ -1,14 +1,28 @@
 # Table 6
 
-\renewcommand{\arraystretch}{0.95}
-\begin{table}[htbp]
-\centering
-\caption{Effect sizes: Program Name }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c c}
+\renewcommand{\arraystretch}{0.9} % tighter rows
+\setlength{\tabcolsep}{5pt}       % tighter columns
+\small                            % smaller font
+
+\begin{longtable}{@{\extracolsep{\fill}} l l c c c @{}}
+\caption{Effect sizes: Program Name} \\
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
+\endfirsthead
+
+\multicolumn{5}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\toprule
+\textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
+\midrule
+\endhead
+
+\midrule \multicolumn{5}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
 \multirow{105}{*}{\textbf{Education PPP}}
   &  & 0.06* & 0.12*** & -0.03*** \\
   & Andhra Pradesh voucher experiment & (0.03) & (0.03) & (0.01) \\
@@ -149,9 +163,7 @@
   &  &  & -0.00 & 0.00 \\
   & Utah charter schools & --- & (0.00) & (0.00) \\
   &  &  & $N_e$=12, $N_p$=1 & $N_e$=6, $N_p$=1 \\
-\bottomrule
-\end{tabular}%
-}
-\bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
-\end{table}
+\end{longtable}
+
+\vspace{0.3em} % tighter space before notes
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
