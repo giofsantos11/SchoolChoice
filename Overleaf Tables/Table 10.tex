@@ -1,82 +1,79 @@
 # Table 10
 
-\renewcommand{\arraystretch}{0.9} % tighter rows
-\setlength{\tabcolsep}{5pt}       % tighter columns
-\small                            % consistent smaller font
-
+\renewcommand{\arraystretch}{0.95}
 \begin{table}[htbp]
 \centering
-\caption{Effect sizes: Methodology}
-\medskip
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l l c c c @{}}
+\caption{Effect sizes: Methodology }
+\medskip\resizebox{1\textwidth}{!}{%
+\begin{tabular}{l l c c c}
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
 \multirow{9}{*}{\textbf{Methodology}}
-  &  &  & 0.02 & -0.10 \\
-  & Correlational & --- & (0.06) & (0.10) \\
-  &  &  & $N_e$=5, $N_p$=2 & $N_e$=5, $N_p$=3 \\
+  &  &  & 0.01 & 0.07 \\
+  & Correlational & --- & (0.01) & (0.08) \\
+  &  &  & $N_e$=5, $N_p$=2 & $N_e$=4, $N_p$=3 \\
 \cmidrule(lr){2-5}
-  &  & 0.16** & 0.14*** & 0.12*** \\
-  & Experimental & (0.07) & (0.02) & (0.03) \\
-  &  & $N_e$=21, $N_p$=10 & $N_e$=55, $N_p$=29 & $N_e$=58, $N_p$=32 \\
+  &  & 0.05* & 0.03** & 0.02 \\
+  & Experimental & (0.03) & (0.01) & (0.01) \\
+  &  & $N_e$=18, $N_p$=10 & $N_e$=40, $N_p$=29 & $N_e$=39, $N_p$=32 \\
 \cmidrule(lr){2-5}
-  &  & 0.13* & 0.01 & 0.02 \\
-  & Quasi-experimental & (0.07) & (0.01) & (0.02) \\
-  &  & $N_e$=11, $N_p$=6 & $N_e$=60, $N_p$=21 & $N_e$=53, $N_p$=22 \\
+  &  & -0.21*** & -0.01 & 0.01** \\
+  & Quasi-experimental & (0.00) & (0.01) & (0.00) \\
+  &  & $N_e$=1, $N_p$=6 & $N_e$=29, $N_p$=21 & $N_e$=23, $N_p$=22 \\
 \midrule
 \multirow{27}{*}{\textbf{Effect label}}
-  &  & 0.38 & 0.06 & 0.11*** \\
-  & ATE & (0.33) & (0.04) & (0.03) \\
-  &  & $N_e$=2, $N_p$=2 & $N_e$=3, $N_p$=3 & $N_e$=3, $N_p$=3 \\
+  &  & 0.00*** & 0.00*** & 0.30*** \\
+  & ATE & (0.00) & (0.00) & (0.00) \\
+  &  & $N_e$=1, $N_p$=2 & $N_e$=1, $N_p$=3 & $N_e$=1, $N_p$=3 \\
 \cmidrule(lr){2-5}
-  &  & -0.02 & 0.00 & 0.01 \\
-  & ATT & (0.04) & (0.01) & (0.02) \\
-  &  & $N_e$=6, $N_p$=3 & $N_e$=63, $N_p$=20 & $N_e$=56, $N_p$=20 \\
+  &  & -0.02 & 0.01 & 0.00 \\
+  & ATT & (0.10) & (0.01) & (0.00) \\
+  &  & $N_e$=3, $N_p$=3 & $N_e$=31, $N_p$=20 & $N_e$=24, $N_p$=20 \\
 \cmidrule(lr){2-5}
-  &  &  & 0.12*** & 0.12 \\
-  & Genetic matching & --- & (0.02) & (0.08) \\
+  &  &  & 0.00*** & 0.00 \\
+  & Genetic matching & --- & (0.00) & (0.00) \\
   &  &  & $N_e$=3, $N_p$=1 & $N_e$=2, $N_p$=1 \\
 \cmidrule(lr){2-5}
-  &  &  & 0.25*** & 0.12 \\
-  & IOT & --- & (0.10) & (0.09) \\
+  &  &  & 0.03*** & 0.02*** \\
+  & IOT & --- & (0.01) & (0.01) \\
   &  &  & $N_e$=1, $N_p$=1 & $N_e$=1, $N_p$=1 \\
 \cmidrule(lr){2-5}
-  &  & 0.11*** & 0.12*** & 0.09*** \\
-  & ITT & (0.03) & (0.03) & (0.03) \\
-  &  & $N_e$=11, $N_p$=7 & $N_e$=19, $N_p$=15 & $N_e$=21, $N_p$=17 \\
+  &  & 0.03** & 0.03** & 0.02 \\
+  & ITT & (0.02) & (0.01) & (0.01) \\
+  &  & $N_e$=10, $N_p$=7 & $N_e$=15, $N_p$=15 & $N_e$=16, $N_p$=17 \\
 \cmidrule(lr){2-5}
-  &  &  & 0.13 & 0.12*** \\
-  & IV & --- & (0.08) & (0.05) \\
-  &  &  & $N_e$=3, $N_p$=3 & $N_e$=3, $N_p$=3 \\
+  &  &  & 0.00 & 0.01 \\
+  & IV & --- & (0.00) & (0.00) \\
+  &  &  & $N_e$=2, $N_p$=3 & $N_e$=2, $N_p$=3 \\
 \cmidrule(lr){2-5}
-  &  & 0.14*** & 0.06 & -0.08 \\
-  & LATE & (0.06) & (0.17) & (0.18) \\
-  &  & $N_e$=5, $N_p$=3 & $N_e$=3, $N_p$=3 & $N_e$=3, $N_p$=3 \\
+  &  & 0.01*** & -0.00 & -0.01 \\
+  & LATE & (0.00) & (0.01) & (0.02) \\
+  &  & $N_e$=1, $N_p$=3 & $N_e$=3, $N_p$=3 & $N_e$=3, $N_p$=3 \\
 \cmidrule(lr){2-5}
-  &  &  & 0.00 & -0.00 \\
-  & PSM & --- & (0.03) & (0.07) \\
+  &  &  & 0.00*** & 0.00 \\
+  & PSM & --- & (0.00) & (0.00) \\
   &  &  & $N_e$=1, $N_p$=1 & $N_e$=2, $N_p$=2 \\
 \cmidrule(lr){2-5}
-  &  & 0.30 & 0.16*** & 0.20*** \\
-  & TOT & (0.33) & (0.05) & (0.07) \\
-  &  & $N_e$=6, $N_p$=4 & $N_e$=24, $N_p$=16 & $N_e$=24, $N_p$=16 \\
+  &  & 0.11 & 0.03 & 0.03 \\
+  & TOT & (0.13) & (0.03) & (0.03) \\
+  &  & $N_e$=4, $N_p$=4 & $N_e$=17, $N_p$=16 & $N_e$=15, $N_p$=16 \\
 \midrule
 \multirow{9}{*}{\textbf{Publication status}}
-  &  & 0.17*** & 0.02 & 0.04 \\
-  & Not published & (0.03) & (0.02) & (0.03) \\
-  &  & $N_e$=7, $N_p$=3 & $N_e$=44, $N_p$=16 & $N_e$=47, $N_p$=19 \\
+  &  & 0.01*** & 0.01** & 0.01 \\
+  & Not published & (0.00) & (0.00) & (0.01) \\
+  &  & $N_e$=2, $N_p$=3 & $N_e$=17, $N_p$=16 & $N_e$=18, $N_p$=19 \\
 \cmidrule(lr){2-5}
-  &  & 0.20** & 0.11*** & 0.12*** \\
-  & Published - Econ & (0.09) & (0.03) & (0.03) \\
-  &  & $N_e$=18, $N_p$=9 & $N_e$=46, $N_p$=20 & $N_e$=40, $N_p$=21 \\
+  &  & 0.06 & 0.03 & 0.02 \\
+  & Published - Econ & (0.04) & (0.02) & (0.02) \\
+  &  & $N_e$=13, $N_p$=9 & $N_e$=36, $N_p$=20 & $N_e$=29, $N_p$=21 \\
 \cmidrule(lr){2-5}
-  &  & 0.03 & 0.04** & 0.02 \\
-  & Published - No Econ & (0.09) & (0.02) & (0.03) \\
-  &  & $N_e$=7, $N_p$=4 & $N_e$=30, $N_p$=16 & $N_e$=29, $N_p$=17 \\
+  &  & -0.00 & 0.00 & 0.02 \\
+  & Published - No Econ & (0.02) & (0.00) & (0.02) \\
+  &  & $N_e$=4, $N_p$=4 & $N_e$=21, $N_p$=16 & $N_e$=19, $N_p$=17 \\
 \bottomrule
-\end{tabular*}
-
-\vspace{0.3em} % tighter space before notes
-\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
+\end{tabular}%
+}
+\bigskip
+\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
