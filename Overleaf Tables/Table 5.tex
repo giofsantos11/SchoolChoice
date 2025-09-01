@@ -1,14 +1,28 @@
 # Table 5
 
-\renewcommand{\arraystretch}{0.95}
-\begin{table}[htbp]
-\centering
-\caption{Effect sizes: Program Name }
-\medskip\resizebox{1\textwidth}{!}{%
-\begin{tabular}{l l c c c}
+\renewcommand{\arraystretch}{0.9} % tighter rows
+\setlength{\tabcolsep}{5pt}       % tighter columns
+\small                            % smaller font
+
+\begin{longtable}{@{\extracolsep{\fill}} l l c c c @{}}
+\caption{Effect sizes: Program Name} \\
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
+\endfirsthead
+
+\multicolumn{5}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\toprule
+\textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
+\midrule
+\endhead
+
+\midrule \multicolumn{5}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
 \multirow{144}{*}{\textbf{Education PPP}}
   &  & 0.19*** &  &  \\
   & Academies (UK) & (0.06) & --- & --- \\
@@ -23,7 +37,7 @@
   &  &  & $N_e$=1, $N_p$=1 & $N_e$=1, $N_p$=1 \\
 \cmidrule(lr){2-5}
   &  &  &  & -0.37*** \\
-  & Bogota private school susbidies & --- & --- & (0.04) \\
+  & Bogota private school subsidies & --- & --- & (0.04) \\
   &  &  &  & $N_e$=1, $N_p$=1 \\
 \cmidrule(lr){2-5}
   &  &  & 0.40*** & 0.55*** \\
@@ -51,7 +65,7 @@
   &  &  & $N_e$=8, $N_p$=5 & $N_e$=7, $N_p$=5 \\
 \cmidrule(lr){2-5}
   &  & 0.15*** & 0.27*** & 0.18*** \\
-  & Colegios en Concesion & (0.04) & (0.10) & (0.05) \\
+  & Colegios en Concesión & (0.04) & (0.10) & (0.05) \\
   &  & $N_e$=2, $N_p$=1 & $N_e$=1, $N_p$=1 & $N_e$=3, $N_p$=2 \\
 \cmidrule(lr){2-5}
   &  &  & -0.09** & -0.24*** \\
@@ -201,9 +215,7 @@
   &  &  & -0.02 & 0.01 \\
   & Utah charter schools & --- & (0.02) & (0.04) \\
   &  &  & $N_e$=12, $N_p$=1 & $N_e$=6, $N_p$=1 \\
-\bottomrule
-\end{tabular}%
-}
+\end{longtable}
+
 \bigskip
-\parbox{\textwidth}{\footnotesize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
-\end{table}
+\parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
