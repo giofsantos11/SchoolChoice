@@ -1,40 +1,62 @@
 # Table 4
 
-\renewcommand{\arraystretch}{0.90} % a bit tighter than 0.95
+\renewcommand{\arraystretch}{0.9} % tighter rows
 \begin{table}[htbp]
 \centering
-\caption{Effect sizes: Design Components }
-\small % ensure same (smaller) font as your preferred tables
-\setlength{\tabcolsep}{5pt} % reduce column padding (default ~6pt)
-\medskip\resizebox{\linewidth}{!}{% use \linewidth and keep width = text width
-\begin{tabular}{@{} l l c c c @{}} % trim outer padding
+\caption{Effect sizes: Country}
+\small % uniform smaller font
+\setlength{\tabcolsep}{5pt} % reduce horizontal padding
+\medskip
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l l c c c @{}}
 \toprule
 \textbf{Group} & \textbf{Category} & \textbf{Combined} & \textbf{Language} & \textbf{Math} \\
 \midrule
-\multirow{6}{*}{\textbf{PPP type}}
-  &  & 0.29** & 0.03** & 0.06*** \\
-  & Charter & (0.12) & (0.01) & (0.02) \\
-  &  & $N_e$=12, $N_p$=5 & $N_e$=69, $N_p$=25 & $N_e$=61, $N_p$=25 \\
+\multirow{33}{*}{\textbf{Country}}
+  &  &  &  & 0.03*** \\
+  & Canada & --- & --- & (0.00) \\
+  &  &  &  & $N_e$=1, $N_p$=1 \\
 \cmidrule(lr){2-5}
-  &  & 0.08* & 0.10*** & 0.06** \\
-  & Voucher & (0.04) & (0.02) & (0.03) \\
-  &  & $N_e$=20, $N_p$=11 & $N_e$=51, $N_p$=27 & $N_e$=55, $N_p$=32 \\
-\midrule
-\multirow{9}{*}{\textbf{Year level}}
-  &  & 0.22** & 0.07*** & 0.07*** \\
-  & Primary & (0.09) & (0.02) & (0.02) \\
-  &  & $N_e$=17, $N_p$=8 & $N_e$=75, $N_p$=41 & $N_e$=76, $N_p$=43 \\
+  &  &  & 0.01 & 0.06 \\
+  & Chile & --- & (0.01) & (0.06) \\
+  &  &  & $N_e$=6, $N_p$=6 & $N_e$=5, $N_p$=6 \\
 \cmidrule(lr){2-5}
-  &  & -0.11 & -0.02 & -0.05 \\
-  & Primary and Secondary & (0.25) & (0.01) & (0.03) \\
-  &  & $N_e$=3, $N_p$=2 & $N_e$=24, $N_p$=4 & $N_e$=23, $N_p$=4 \\
+  &  & 0.03*** & 0.02*** & 0.02*** \\
+  & Colombia & (0.00) & (0.00) & (0.00) \\
+  &  & $N_e$=1, $N_p$=3 & $N_e$=2, $N_p$=2 & $N_e$=2, $N_p$=5 \\
 \cmidrule(lr){2-5}
-  &  & 0.10** & 0.10*** & 0.16*** \\
-  & Secondary & (0.04) & (0.03) & (0.04) \\
-  &  & $N_e$=12, $N_p$=6 & $N_e$=21, $N_p$=12 & $N_e$=17, $N_p$=13 \\
+  &  & -0.07*** &  &  \\
+  & Denmark & (0.00) & --- & --- \\
+  &  & $N_e$=1, $N_p$=1 &  &  \\
+\cmidrule(lr){2-5}
+  &  & 0.06* & 0.09*** & -0.02 \\
+  & India & (0.03) & (0.03) & (0.01) \\
+  &  & $N_e$=4, $N_p$=1 & $N_e$=6, $N_p$=3 & $N_e$=6, $N_p$=3 \\
+\cmidrule(lr){2-5}
+  &  & 0.00 & 0.01* & 0.00 \\
+  & Liberia & (0.00) & (0.00) & (0.00) \\
+  &  & $N_e$=4, $N_p$=1 & $N_e$=4, $N_p$=2 & $N_e$=2, $N_p$=1 \\
+\cmidrule(lr){2-5}
+  &  &  & 0.01*** & 0.00*** \\
+  & Mexico & --- & (0.00) & (0.00) \\
+  &  &  & $N_e$=2, $N_p$=1 & $N_e$=2, $N_p$=1 \\
+\cmidrule(lr){2-5}
+  &  & 0.15 & 0.11 & 0.33* \\
+  & Pakistan & (0.20) & (0.22) & (0.17) \\
+  &  & $N_e$=3, $N_p$=2 & $N_e$=3, $N_p$=2 & $N_e$=2, $N_p$=1 \\
+\cmidrule(lr){2-5}
+  &  & 0.00*** &  &  \\
+  & Sweden & (0.00) & --- & --- \\
+  &  & $N_e$=1, $N_p$=3 &  &  \\
+\cmidrule(lr){2-5}
+  &  & 0.01*** & 0.00 & 0.00 \\
+  & US & (0.00) & (0.00) & (0.00) \\
+  &  & $N_e$=5, $N_p$=2 & $N_e$=50, $N_p$=31 & $N_e$=45, $N_p$=33 \\
+\cmidrule(lr){2-5}
+  &  &  & 0.01*** & 0.00*** \\
+  & Uruguay & --- & (0.00) & (0.00) \\
+  &  &  & $N_e$=1, $N_p$=1 & $N_e$=1, $N_p$=1 \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular*}
 \bigskip
 \parbox{\linewidth}{\scriptsize \textit{Notes.} First line: estimate with significance stars; second line: standard error in parentheses; third line: $N_e$ (number of estimates) and $N_p$ (number of distinct papers). Significance: * $p<0.10$, ** $p<0.05$, *** $p<0.01$.}
 \end{table}
