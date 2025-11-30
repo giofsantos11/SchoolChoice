@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 17 08:18:01 2024
+
+@author: angelosantos
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import os
+import seaborn as sns
+
+# Paths
+file_path = '/Users/angelosantos/Library/CloudStorage/OneDrive-GeorgeMasonUniversity-O365Production/School Choice/Datasets/Pooled_Estimates.xlsx'
+output_path = '/Users/angelosantos/Library/CloudStorage/OneDrive-GeorgeMasonUniversity-O365Production/School Choice/Outputs'
+
+# Ensure output directory exists
+os.makedirs(output_path, exist_ok=True)
+
+# Read data from your Excel file
+df = pd.read_excel(file_path)
+
+# Assuming the file contains columns named Group, Subgroup, Theta, SE, and N
+df['Subgroup'] = df.apply(lambda row: f"{row['Subgroup']} (N = {int(row['N'])})", axis=1)
+
+# Calculating confidence intervals, rounding to two decimal places
+df['Theta'] = df['Theta'].round(2)
+df['SE'] = df['SE'].round(2)
+df['CI_lower'] = (df['Theta'] - 1.96 * df['SE']).round(2)
+df['CI_upper'] = (df['Theta'] + 1.96 * df['SE']).round(2)
+
+# Set font to Arial, fallback to default if not found
+plt.rcParams["font.family"] = "Arial"
+
+# Use seaborn's color palette for a subtle variation in color
+colors = sns.color_palette("muted", len(df['Group'].unique()))
+
+# Get unique groups for separate plotting
+unique_groups = df['Group'].unique()
+
+# Loop through each group and create a separate plot
+for idx, group in enumerate(unique_groups):
+    group_df = df[df['Group'] == group]
+    group_df = group_df.reset_index(drop=True)
+    group_df['y_pos'] = np.arange(len(group_df)) * 1  # Position for each row
+    
+    # Plotting for the current group
+    fig, ax = plt.subplots(figsize=(8, 6))
+    
+    # Draw a thin vertical red line at x=0
+    ax.axvline(x=0, color='red', linewidth=0.5, linestyle='--')
+
+    # Plot each effect size with shaded confidence interval
+    for i, row in group_df.iterrows():
+        # Use the color for the group based on the color palette
+        color = colors[idx]
+        
+        # Format theta with significance stars based on p-value
+        theta_str = f"{row['Theta']:.2f}"
+        if row['p-value'] <= 0.01:
+            theta_str += "***"
+        elif row['p-value'] <= 0.05:
+            theta_str += "**"
+        elif row['p-value'] <= 0.1:
+            theta_str += "*"
+        
+        # Plot with shaded area for CI
+        ax.errorbar(row['Theta'], row['y_pos'], fmt='o', color=color, markersize=6, capsize=4)
+        ax.fill_betweenx([row['y_pos'] - 0.1, row['y_pos'] + 0.1], row['CI_lower'], row['CI_upper'], color=color, alpha=0.2)
+
+        # Add annotation for theta with stars
+        ax.text(row['Theta'], row['y_pos'], theta_str, ha='right', va='center', fontsize=10, color=color)
+
+    # Set y-ticks to subgroups (includes N in the labels)
+    ax.set_yticks(group_df['y_pos'])
+    ax.set_yticklabels(group_df['Subgroup'], fontsize=10)
+    ax.invert_yaxis()  # Top subgroup at top
+    
+    # Labels and title enhancements
+    ax.set_xlabel('Effect size', fontsize=12)
+    ax.set_title(f"Effect Sizes for {group}", fontsize=14, fontweight='bold')
+    
+    # Remove top and right spines
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+
+    # Add light horizontal grid lines
+    ax.grid(axis='y', linestyle='--', alpha=0.5)
+
+    # Save each figure automatically with group name in the filename
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_path, f"{group}_effect_size_plot.png"))
+    plt.close(fig)  # Close the figure after saving to avoid display
