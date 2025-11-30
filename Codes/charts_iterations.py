@@ -1,17 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  3 08:31:24 2024
 
-@author: angelosantos
 """
+Created on 3 Nov 2024 by Angelo Santos
+Adjusted on 20 Nov and 29 Dec 2024 by Olzhas Zhorayev
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 17 08:18:01 2024
-
-@author: angelosantos
 """
 
 import matplotlib.pyplot as plt
@@ -21,10 +12,11 @@ import os
 import seaborn as sns
 
 # Paths: Per dollar impacts (MVPF) vs effect size (Pooled_Estimates)
-file_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Datasets/Pooled_Estimates_new.xlsx'
-# file_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Datasets/Pooled_Estimates_MVPF.xlsx'
+#file_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Datasets/Pooled_Estimates_29.12.24.xlsx'
+file_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Datasets/Pooled_Estimates_MVPF_29.12.24_edited.xlsx'
 
-output_base_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Codes/Outputs/Effect Sizes new'
+#output_base_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Codes/Outputs/Effect Sizes 29.12.24'
+output_base_path = '/Users/Admin/Documents/GMU/Dr Kugler/School choice/Codes/Outputs/MVPF 29.12.24'
 os.makedirs(output_base_path, exist_ok=True)
 
 # Chart title
