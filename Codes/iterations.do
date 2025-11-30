@@ -1,13 +1,24 @@
-* Define the directory for Excel output
-global directory "/Users/angelosantos/Library/CloudStorage/OneDrive-GeorgeMasonUniversity-O365Production/School Choice/Datasets"
+/*
+Instructions:
+1. Change the directory based on where the file is stored in your local drive
+2. Update filename: if you are running per-dollar impacts (MVPF), use Pooled_Estimates_MVPF; if just effect size use "Pooled_Estimates"
+3. Change the effect size
+*/
+
+clear all 
+
+* 1. Define the directory for Excel output
+*global directory "/Users/angelosantos/Library/CloudStorage/OneDrive-GeorgeMasonUniversity-O365Production/School Choice/Datasets"
+global directory "\\Client\C$\Users\Admin\Documents\GMU\Dr Kugler\School choice\Datasets"
 
 * Load data
-use "$directory/Merged-Data.dta", clear
+use "$directory/Merged-Data-06.11.24.dta", clear
 
-* Filename for the Excel file (options: "Pooled_Estimates_MVPF" or ""Pooled_Estimates")
-local filename "Pooled_Estimates"
+* 2. Filename for the Excel file (options: "Pooled_Estimates_MVPF" or ""Pooled_Estimates")
+*local filename "Pooled_Estimates_MVPF"
+local filename "Pooled_Estimates_new"
 
-* Identify meta-analysis variables
+* 3. Identify meta-analysis variables
 gen studyid = PaperID
 gen eff_size = Effectsize
 gen std_error = SEstd
@@ -20,6 +31,8 @@ gen eff_size = Effectsize
 gen std_error = SEstd
 */
 
+*----------Don't change anything after this line----------*
+
 * Create group variables only once, outside the loop
 clonevar group1 = PPPtype
 clonevar group2 = Incomeclassification
@@ -31,22 +44,22 @@ clonevar group7 = Equity
 clonevar group8 = Maturity
 clonevar group9 = JournalType if JournalType!="0"
 gen group10 = "All"
-
+clonevar group11 = Effectlabel  // New group for Effectlabel (ITT vs TOT)
 
 * Define the groups
-local groups "group1 group2 group3 group4 group5 group6 group7 group8 group9 group10"
+local groups "group1 group2 group3 group4 group5 group6 group7 group8 group9 group10 group11"
 
 * Set the output Excel file once, outside the loop
 putexcel set "${directory}/`filename'.xlsx", replace
 
 * Define labels for each sheet
-local labels "All Voucher Charter Subsidy Primary Secondary Vocational Published Advanced LMIC"
+local labels "All Voucher Charter Subsidy Primary Secondary Vocational Published Advanced LMIC ITT_vs_TOT"
 
 * Apply meta set outside the loop
 meta set eff_size std_error, studylabel(studyid)
 
 * Loop over each condition and generate results
-forvalues i = 1/10 {
+forvalues i = 1/11 {  // Adjust loop range to include the new group
     * Preserve the original data before applying each condition
     preserve
     
@@ -78,16 +91,15 @@ forvalues i = 1/10 {
     else if `i' == 8 {
         keep if inlist(JournalType, "Economics", "Non-Economics")
     }
-
-	else if `i' == 9 {
+    else if `i' == 9 {
         keep if Incomeclassification == "Advanced"
     }
-	
-	else if `i' == 10 {
+    else if `i' == 10 {
         keep if Incomeclassification == "LMIC"
     }
-	
-
+    else if `i' == 11 {
+        keep if inlist(Effectlabel, "ITT", "TOT")  // Restrict to ITT and TOT
+    }
 
     * Set the Excel sheet for current iteration with the correct label
     putexcel set "${directory}/`filename'.xlsx", sheet("`label'") modify
@@ -126,3 +138,4 @@ forvalues i = 1/10 {
     * Restore the original data for the next iteration
     restore
 }
+
