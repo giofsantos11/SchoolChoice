@@ -737,6 +737,8 @@ Do not:
 - leave uncertainty implicit
 - write unstructured narrative notes without category labels
 - use different terminology for the same program across papers without standardization
+- combining information from sources other than the paper
+- making inferences on the program design features based on related programs from other papers in the folder
 
 ---
 
@@ -747,4 +749,3 @@ When evidence is thin, the agent should prefer:
 - explicit uncertainty over forced completion
 - consistent structure over stylistic variety
 
-The goal is not to sound comprehensive. The goal is to create a rigorous, comparable, and auditable record of PPP program design that can later be linked to analysis of cost-effectiveness and effectiveness relative to public provision.
