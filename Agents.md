@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This agent supports a research project on education public-private partnerships (PPPs), with a focus on voucher and charter school interventions.
+This agent supports a research project on public-private partnerships (PPPs) in education operations, covering school vouchers and charter schools around the world.
 
 The paper’s main objective is to measure the cost-effectiveness of education PPPs relative to traditional public provision. The next step in the project is to understand which program design elements are associated with higher relative cost-effectiveness and, where relevant, higher effectiveness across PPP models.
 
@@ -44,7 +44,7 @@ The primary unit of extraction is **one record per program-paper pair**.
 
 This means:
 - If the same program appears in multiple papers, create separate records for each paper.
-- If one paper evaluates multiple distinct program variants with materially different design features, create separate records for each variant.
+- If one paper evaluates multiple distinct program variants with materially different design features, create separate records for each variant, if possible.
 - If one paper studies multiple cohorts of the same program but the design is unchanged, one record is sufficient unless the paper clearly states design changes across cohorts.
 
 ### Why this unit is required
@@ -54,7 +54,7 @@ This preserves traceability to the source and avoids blending distinct designs o
 
 ## What the agent must extract
 
-The agent must extract **program design features** using the seven mutually exclusive and collectively exhaustive categories below.
+The agent must extract **program design features** using the seven mutually exclusive categories below.
 
 Each feature should be assigned to the single best-fitting category based on the rules in this file.
 
@@ -68,7 +68,7 @@ The categories are:
 6. Admissions and student selection rules  
 7. Teacher workforce rules  
 
-These categories are intended to be MECE. If a feature appears to overlap, assign it using the category assignment rules below.
+These categories are intended to be mutually exclusive. If a feature appears to overlap, assign it using the category assignment rules below.
 
 ---
 
