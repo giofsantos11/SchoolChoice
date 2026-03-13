@@ -37,6 +37,92 @@ The extraction should therefore preserve details that may later be relevant for 
 
 ---
 
+## Workflow
+
+The extraction workflow should proceed in stages.
+
+### Stage 1: Extract qualitative program design information
+For each program-paper pair, extract qualitative information on program design using the seven core design dimensions:
+
+1. targeting and eligibility  
+2. funding and financial rules  
+3. provider eligibility and entry  
+4. school autonomy  
+5. accountability and oversight  
+6. admissions and student selection rules  
+7. teacher workforce rules  
+
+At this stage, the goal is to capture the design features described in the paper in a structured and evidence-based way.
+
+Do not force all features into a rigid coding scheme too early. The purpose of this stage is to build a disciplined qualitative record of how voucher and charter programs were designed.
+
+The outputs of this stage are:
+- `design_extraction`
+- `evidence_log`
+
+### Stage 2: Review the qualitative extraction across papers
+After collecting qualitative extraction for a meaningful set of papers, review the full set of extracted notes across programs.
+
+The goal of this stage is to identify the recurring design elements that appear often enough, clearly enough, and consistently enough to be converted into analysis-ready variables.
+
+Examples may include:
+- income targeting
+- low-performing school targeting
+- partial versus full subsidy
+- family top-up requirement
+- lottery-based admissions
+- selective admissions restrictions
+- school autonomy over staffing
+- performance-based accountability
+- teacher salary benchmarking
+
+These categories should be defined after reviewing the qualitative material, not imposed prematurely.
+
+### Stage 3: Convert qualitative information into quantitative tags
+Once the recurring design elements have been identified, create a separate coding sheet to convert the qualitative extraction into quantitative variables.
+
+This sheet may be called:
+- `design_coded`
+- `design_tags`
+- `design_quantified`
+
+Each row should still correspond to one `program_paper_id`.
+
+The purpose of this sheet is to translate the qualitative extraction into harmonized variables that can be used for descriptive statistics, subgroup comparisons, and regression analysis.
+
+Examples:
+- binary indicators
+- categorical tags
+- ordinal scales
+- grouped design indices
+
+The coding must always be based on the qualitative extraction and supporting evidence, not on memory or inference.
+
+### Stage 4: Preserve the distinction between raw extraction and coded data
+The qualitative extraction sheets should remain the source record.
+
+Do not overwrite or replace the original qualitative notes when creating quantitative tags.
+
+The structure should remain:
+
+- `design_extraction` = structured qualitative extraction
+- `evidence_log` = source evidence supporting the extraction
+- `design_coded` = quantitative variables derived from the qualitative extraction
+
+This separation preserves transparency and makes it possible to revisit coding decisions later.
+
+### Stage 5: Link the coded design data to the main analysis database
+After the coding sheet has been finalized, merge the coded design variables into the main database containing effect sizes and cost-effectiveness measures.
+
+The key linking variable should be a stable identifier such as:
+- `program_paper_id`
+
+This makes it possible to analyze whether certain design features are associated with:
+- higher effectiveness
+- higher relative cost-effectiveness
+- different patterns across voucher and charter programs
+---
+
 ## Unit of extraction
 
 ### Primary unit
