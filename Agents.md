@@ -611,7 +611,7 @@ Use the structure below.
 
 ---
 
-## Recommended spreadsheet output
+## Spreadsheet output
 
 The primary output should be an Excel workbook.
 
@@ -664,9 +664,21 @@ Suggested columns:
 - `overall_confidence`
 
 ### Sheet 2: `evidence_log`
-Optional but recommended.
 
-Suggested columns:
+This sheet is an audit trail for the design extraction. It stores the source evidence used to support the entries in the main `design_extraction` sheet.
+
+#### Purpose
+Use `evidence_log` to record the specific text passages that justify how a design feature was extracted. This sheet helps preserve traceability, supports later quality checks, and makes it easier to revisit ambiguous cases without rereading the full paper.
+
+#### Unit of entry
+Each row in `evidence_log` should correspond to **one evidence excerpt for one design category within one program-paper pair**.
+
+This means:
+- a single `program_paper_id` may appear in multiple rows
+- there may be multiple rows for the same category if the paper discusses that design element in more than one place
+- if no useful evidence is found for a category, no row is required in `evidence_log`, but the corresponding status in `design_extraction` should still be filled in as `not stated`, `unclear`, `partial`, or another permitted value
+
+#### Suggested columns
 - `program_paper_id`
 - `category`
 - `evidence_excerpt`
@@ -674,6 +686,69 @@ Suggested columns:
 - `section_or_location`
 - `notes`
 
+#### Column guide
+
+**`program_paper_id`**  
+Unique identifier linking the evidence row to the main record in `design_extraction`.
+
+**`category`**  
+The design category supported by the excerpt. Use one of the following standardized values only:
+- `targeting`
+- `funding`
+- `provider_entry`
+- `autonomy`
+- `accountability`
+- `admissions`
+- `teacher_workforce`
+
+**`evidence_excerpt`**  
+A short direct quote or tight paraphrase from the paper that supports the extraction. Keep this concise and focused on the relevant design feature. Do not paste long paragraphs unless necessary.
+
+**`page_number`**  
+The page number where the evidence appears. If the exact page number cannot be determined, leave blank or use a consistent placeholder such as `not available`.
+
+**`section_or_location`**  
+A short label describing where the evidence appears in the paper, such as:
+- `Program description`
+- `Institutional background`
+- `Methods`
+- `Appendix`
+- `Discussion`
+- `Table 1`
+
+This helps locate the evidence quickly even when page numbering is unclear.
+
+**`notes`**  
+Optional field for brief clarifications, such as:
+- whether the excerpt refers to formal design or implementation
+- whether the wording is ambiguous
+- whether the evidence is indirect rather than explicit
+- whether multiple excerpts should be read together
+
+#### Entry rules
+
+1. Record evidence only for program design, not for evaluation design.
+2. Use the category names consistently so the sheet can be filtered cleanly.
+3. Prefer short, high-value excerpts over long copied text.
+4. If the excerpt is ambiguous, note that in `notes` rather than overstating certainty.
+5. If the same excerpt supports multiple categories, create separate rows for each category.
+6. Distinguish formal rules from implementation in `notes` when relevant.
+7. Do not infer missing design features. If the paper does not clearly state a feature, use `design_extraction` to mark the category as `not stated`, `partial`, or `unclear`.
+
+#### Example
+
+| program_paper_id | category | evidence_excerpt | page_number | section_or_location | notes |
+|---|---|---|---|---|---|
+| charlotte_childrens_scholarship_fund_program__greene_2000 | funding | Partial scholarships with a maximum value of $1,700 | 2 | Program description | Formal funding rule |
+| charlotte_childrens_scholarship_fund_program__greene_2000 | admissions | Scholarships were awarded by lottery when demand exceeded funds | 3 | Program description | Formal admissions rule |
+| charlotte_childrens_scholarship_fund_program__greene_2000 | autonomy | Private schools may offer greater autonomy in the classroom | 11 | Discussion | Indirect interpretation, not clearly documented program rule |
+
+#### Quality check
+Before finalizing the extraction, confirm that:
+- each important non-empty category in `design_extraction` is backed by at least one relevant row in `evidence_log`
+- evidence rows are linked to the correct `program_paper_id`
+- ambiguous evidence is flagged in `notes`
+- the excerpt supports the category it is assigned to
 ### Sheet 3: `codebook`
 Define every column and permitted values so the extraction remains consistent.
 
