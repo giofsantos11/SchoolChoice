@@ -517,11 +517,8 @@ The confidence field should reflect the strength of the underlying intervention 
 The agent must produce one structured record per program-paper pair.
 
 ### Required identifiers
-- `program_id`
+- `program name`
 - `paper_id`
-- `program_paper_id`
-- `program_name_standardized`
-- `program_name_as_written`
 - `country`
 - `intervention_type`
 - `study_citation`
